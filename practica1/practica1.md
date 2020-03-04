@@ -11,15 +11,27 @@ Específicamente, hay que llevar a cabo las siguientes tareas:
 
 El resultado de ejecutar estas tareas se debe documentar usando un archivo de texto y/o capturas de pantalla que se subirán a la cuenta de GitHub.
 
-### 1º Acceder por SSH de una máquina a otra
+### Configuración las máquinas y de sus IPs
 
-En esta primera foto tenemos la configuración de ip que se han usado para estas máquinas, ambas en el adaptador **enp0s8**.
+
+
+Para la practica he usado la imagen de Ubuntu Server 18.04. Toda la instalación de Apache, MySql, PHP y curL la he hecho mediante `taskel`instalando el paquete ***Lamp Server***.
+
+ La configuración de IPs la he hecho usando **netplan**. Creando un archivo de configuración en `/etc/netplan`. Este archivo contiene la información referida a la configuración de ambas IPs.
+![netplan](img/np.png)
+
+Esta configuración se aplica con el comando `sudo netplan apply`.
+
+En la siguiente imagen viene detallada la configuración final de las Ips que se han usado para estas máquinas, ambas en el adaptador **enp0s8**.
 
 * La máquina 1 (m1) tiene asignada la IP: **192.168.56.11**
 
 * La máquina 2 (m2) tiene asignada la IP: **192.168.56.12**
 
 ![IPS](img/ip.png)
+
+### 1º Acceder por SSH de una máquina a otra
+
 
 #### 1.1 Conexión SSH M1 a M2
 
