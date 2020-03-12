@@ -13,12 +13,11 @@ El resultado de ejecutar estas tareas se debe documentar usando un archivo de te
 
 ### Configuración las máquinas y de sus IPs
 
-
-
 Para la practica he usado la imagen de Ubuntu Server 18.04. Toda la instalación de Apache, MySql, PHP y curL la he hecho mediante `taskel`instalando el paquete ***Lamp Server***.
 
  La configuración de IPs la he hecho usando **netplan**. Creando un archivo de configuración en `/etc/netplan`. Este archivo contiene la información referida a la configuración de ambas IPs.
-![netplan](img/np.png)
+
+![netplan](https://i.imgur.com/d7V37Ij.png)
 
 Esta configuración se aplica con el comando `sudo netplan apply`.
 
@@ -28,7 +27,7 @@ En la siguiente imagen viene detallada la configuración final de las Ips que se
 
 * La máquina 2 (m2) tiene asignada la IP: **192.168.56.12**
 
-![IPS](img/ip.png)
+![IPS](https://i.imgur.com/azFX0o9.png)
 
 ### 1º Acceder por SSH de una máquina a otra
 
@@ -41,7 +40,7 @@ Como vemos al principio estamos en la máquina m1 en el usuario root:
 `root@m1: /home/chusmoyano`.
 
 Hacemos el ssh usando el comando `ssh chusmoyano@192.168.56.12` y para comprobar que estamos en m2, comprobamos la IP actual con ayuda del comando `ifconfig enp0s8`.
-![m1tom2](img/m1tom2.png)
+![m1tom2](https://i.imgur.com/lnbI7Xo.png)
 
 
 #### 1.2 Conexión SSH M2 a M1
@@ -53,14 +52,14 @@ Como vemos al principio estamos en la máquina m2 en el usuario chusmoyano:
 `chusmoyano@m2:`.
 
 Hacemos el ssh usando el comando `ssh chusmoyano@192.168.56.11` y para comprobar que estamos en m1, comprobamos la IP de la máquina actual con ayuda del comando `ifconfig enp0s8`.
-![m2tom1](img/m2tom1.png)
+![m2tom1](https://i.imgur.com/xftCirM.png)
 
 ### 2º Acceder mediante la herramienta curl desde una máquina a la otra
 Para hacer los curl se ha usado el comando `curl http:/<direccion ip>\ejemplo.html`. Cada html muestra un mensaje de ejemplo con el nombre al final de la maquina en la que está alojado.
 
 
 #### 2.1 Curl HTML desde M1 a M2
-![curl1to2](img/curlm1tom2.png)
+![curl1to2](https://i.imgur.com/BkiVMy1.png)
 
 #### 2.2 Curl HTML desde M2 a M1
-![curl2to1](img/curlm2tom1.png)
+![curl2to1](https://i.imgur.com/69A48CP.png)
